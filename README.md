@@ -1,10 +1,10 @@
 # CMSC313-Project-3
+O0 vs. O1 vs. O3:
 
-#Write a C program that outputs a hex dump of the attached file in the format below in Figure 1. The left most column is the number of bytes into the file (i.e. the address) in hex. The #middle are 16 consecutive bytes in hex separated by spaces, and the left most column is the ASCII representation of the bytes with ‘.’ replacing any non-ASCII bytes.
-#Compile it with optimization levels -O0, -O1 and -O3 and then compare and discuss the assembly code/data generated (using ‘-S’) by the different optimization levels. 
+O0 has no optimization which can be seen through the length of the file being much bigger than the other two at 253 lines. It is also a lot more human readable than the other optimizations. It is also theoretically slower than the rest but with how simple the program is its hard to tell.
 
-Example:
+O1 has some optimization which can be seen through the length of the file being the smallest with the fewest lines of the three files at 157 lines. It is also harder to tell what the assembly is actually doing. It is also supposed to be faster than O0 but with how simple the program is its hard to tell.
 
-00002040 75 6e 74 75 20 31 33 2e 33 2e 30 2d 36 75 62 75 |untu 13.3.0-6ubu|
+O3 has more optimization which can be seen through the length of the file being smaller than that of the O0 file. Interestingly enough it is longer than the O1 file at 173 lines. This is from it attempting to make the file even faster but again with how simple the program is there is no noticeable difference in speed. Additionally once again it is harder to read what it is actually doing.
 
-00002050 6e 74 75 32 7e 32 34 2e 30 34 2e 31 29 20 31 33 |ntu2~24.04.1) 13|
+Overall I would say O1 is probably the best of the bunch as it has the fewest lines and is relatively the same speed as the others.
